@@ -34,10 +34,16 @@
         var light = new THREE.DirectionalLight( 0xffffff );
         light.position.set( 0, 1, 1 ).normalize();
         scene.add(light);
-        var geometry = new THREE.CubeGeometry( 10, 10, 10);
+        var geometry = new THREE.CubeGeometry( 10, 20, 10);
         // var material = new THREE.MeshPhongMaterial( { ambient: 0x050505, color: 0x0033ff, specular: 0x555555, shininess: 30 } );
-        var material = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('js/images/tardis.jpg') } );
-        mesh = new THREE.Mesh(geometry, material );
+        // var material = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('js/images/tardis.jpg') } );
+
+        var material1 = new THREE.MeshPhongMaterial( { map: THREE.ImageUtils.loadTexture('js/images/tardis.png') } );
+        var material2 = new THREE.MeshBasicMaterial( { color: 'blue' } );
+        var materials = [material1, material1, material2, material2, material1, material1];
+
+        var meshFaceMaterial = new THREE.MeshFaceMaterial( materials );
+        mesh = new THREE.Mesh(geometry,  meshFaceMaterial);
         mesh.position.z = -50;
         scene.add( mesh );
         renderer = new THREE.WebGLRenderer();
