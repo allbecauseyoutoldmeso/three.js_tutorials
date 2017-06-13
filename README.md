@@ -1,2 +1,2 @@
 * I decided to teach myself more about Three.js...
-* And built a <a href="https://allbecauseyoutoldmeso.github.io/three.js_tutorials">tardis</a>.
+* ...and kinda built a <a href="https://allbecauseyoutoldmeso.github.io/three.js_tutorials">tardis</a>.
